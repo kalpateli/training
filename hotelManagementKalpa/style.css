@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+.navbar {
+    background-color: #cecdf3;
+    height: 100px;
+    width: 100%;
+}
+
+.logo {
+    margin-top: 30px;
+    margin-left: 100px;
+    float: left;
+}
+
+.navbar h1 {
+    text-align: center;
+    display: inline-block;
+}
+
+
+.navbar>ul {
+    margin-top: 40px;
+    margin-right: 100px;
+    float: right;
+
+}
+
+.options {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    list-style: none;
+}
+
+.options img:hover {
+    outline: none;
+    content: url("images/user.png");
+    cursor: pointer;
+}
+
+.options ul li {
+    list-style: none;
+    padding: 5px;
+}
+
+.options a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    /* font-weight:300; */
+    padding: 10px;
+    display: block;
+    width: 100px;
+    text-align: center;
+
+
+}
+
+.options a:hover,
+.active {
+    background-color: white;
+    color: black;
+    border-radius: 1px;
+}
+
+
+.options ul {
+    display: none;
+    position: absolute;
+    width: max-content;
+    background-color: #cecdf3;
+    border-radius: 0px 0px 5px 0px;
+    z-index: 999;
+}
+
+.options:hover ul {
+    display: block;
+}
+
+.profile {
+    top: 8px;
+    left: 10px;
+}
+
+
+.footer {
+    padding-top: 20px;
+    width: 100%;
+    height: 150px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.footer a:hover,
+.custom-color:hover {
+    color: rebeccapurple;
+}
+
+.contact i {
+    color: white;
+    display: inline;
+    padding: 20px;
+
+
+}
+
+.links {
+    margin-right: 400px;
+}
+
+.links a {
+    display: block;
+    padding: 10px;
+
+}
+
+.contact {
+    margin-left: 400px;
+
+}
+
+.address {
+    margin-top: 80px;
+}

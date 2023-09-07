@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="siSu.css">
+    <script src="siScript.js"></script>
+
+    <style>
+        #wlcm {
+            font-size: 1cm;
+        }
+
+        #pass {
+            color: white;
+            margin-left: 150px;
+        }
+
+        .link {
+            color: white;
+            text-align: center;
+            font-size: large;
+            word-spacing: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h2>Hotel</h2>
+    </div>
+    <div class="signup">
+        <div class="container" style="height:85vh">
+            <form style="padding: 8% 0" onsubmit="return validate2()" action="logIn.html">
+                <h1 id="wlcm">Welcome!! </h1><br><br>
+                <input type="text" class="in" id=username name=uname placeholder=" Enter User-Name"
+                    style="margin-top: 10px; ">
+                <br>
+                <br>
+                <input type="email" class="in" id=email name=emailid placeholder=" Enter Email-id"
+                    style="margin-top: 10px;">
+
+                <br><br>
+                <input type="password"
+                    title="must contain a lowercase, an uppercase,any of these symbols'@!#$%&?' and a number" class="in"
+                    id=password name=pass placeholder=" Create Password" minlength="8" maxlength="15">
+                <br>
+                <span style="margin-left:120px">*minimum 8 characters</span>
+                <br><br>
+                <input type="password" class="in" id=repassword name=repass placeholder=" Re-enter Password"
+                    minlength="8" maxlength="15"><br><br>
+
+                <button id="SUbutton" type="submit" style=" font-size: 20px;" value="Sign-up"><strong>SIGN-UP</strong>
+                </button>
+                <br>
+                <br>
+                <a class="link" href="logIn.html">ALREADY HAVE AN ACCOUNT ?</a>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

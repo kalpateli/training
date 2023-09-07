@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- <link rel="stylesheet" href="bookingRest.css"> -->
+
+    <title>Restaurant</title>
+    <style>
+        .container-rest {
+            width: 100%;
+            height: max-content;
+            overflow: hidden;
+            margin-top: 0px;
+        }
+
+        .head {
+            padding: 10px 50px;
+            display: flex;
+            flex-direction: row;
+            color: rebeccapurple;
+            margin: 50px 0px;
+            position: relative;
+
+        }
+
+        .head h2 {
+            margin-left: 100px;
+            font-size: 40px;
+        }
+
+        .head span {
+            position: absolute;
+            right: 150px;
+            font-size: larger;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+        }
+
+
+        .head i {
+            margin-left: 20px;
+            font-size: 30px;
+
+            color: rebeccapurple
+        }
+
+        .head i:hover {
+            color: #cecdf3;
+        }
+
+
+        .cuisines {
+            overflow: hidden;
+            /* border: 1px solid #ccc; */
+            background-color: rebeccapurple;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .cDiv {
+            margin-left: 80px;
+            margin-right: 80px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            /* margin-bottom:10px; */
+
+
+        }
+
+        .cuisine img {
+            width: 250px;
+            cursor: pointer;
+        }
+
+
+
+        .cuisine {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            border-radius: 100%;
+            width: 160px;
+            height: 160px;
+            margin-bottom: 20px;
+
+
+        }
+
+        .cuisine button {
+            width: 160px;
+            height: 160px;
+
+        }
+
+        .cuisine:hover,
+        .selected {
+            border: solid black 5px;
+        }
+
+
+
+        #Indian {
+            display: block;
+
+        }
+
+        .item {
+            margin-bottom: 5px;
+            background-color: #cecdf3;
+            color: black;
+            cursor: pointer;
+            padding: 18px;
+
+            width: 70%;
+            margin-left: 15%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: x-large;
+            font-weight: 600;
+            transition: 0.4s;
+            border-radius: 10px 10px 0px 0px;
+
+        }
+
+        .item:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .items {
+            width: 100%;
+            display: none;
+            justify-content: center;
+            padding: 6px 12px;
+            margin: 100px 0px;
+
+
+        }
+
+        .detail {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            width: 70%;
+            margin-left: 15%;
+            margin-bottom: 5px;
+            color: white;
+            background-color: rebeccapurple;
+            border-radius: 0px 0px 10px 10px;
+
+
+        }
+
+        .info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+        }
+
+        .detail img {
+            width: 250px;
+            margin: 10px;
+        }
+
+        .detail p {
+            margin: 10px;
+            width: 580px;
+            font-size: large;
+        }
+
+        #dishPrice {
+            display: flex;
+            flex-direction: column;
+            font-size: x-large;
+            font-weight: bold;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <h1> HOTEL</h1>
+        </div>
+        <ul>
+            <li class="options active "><a href="Home.html">Home</a></li>
+            <li class="options "><a href="booking.html">Booking</a></li>
+            <li class="options"><a href="aboutUs.html"> About Us</a></li>
+            <li class="options profile"> <img src="images/userHover.png" style="width: 35px;">
+                <ul>
+                    <li><a href="signUp.html">Sign Up</a></li>
+                    <li><a href="logIn.html">Log In</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="container-rest">
+        <div class="head">
+            <h2>MENU</h2>
+            <span>Room Service &nbsp;&nbsp; :: <a href="#"><i class="material-icons">phone</i></a></span>
+        </div>
+
+        <div class="cuisines">
+            <div class="cDiv">
+                <button class="cuisine selected" onclick="openCuisine(event, 'Indian')"><img
+                        src="images/indian.jpg"></button>
+                <h3>Indian Cuisine</h3>
+            </div>
+            <div class="cDiv">
+                <button class="cuisine" onclick="openCuisine(event, 'Italian')"><img src="images/italian.jpg"></button>
+                <h3>Italian Cuisine</h3>
+            </div>
+            <div class="cDiv">
+                <button class="cuisine" onclick="openCuisine(event, 'Korean')"><img src="images/korean.jpg"></button>
+                <h3>Korean Cuisine</h3>
+            </div>
+            <div class="cDiv">
+                <button class="cuisine" onclick="openCuisine(event, 'Mexican')"><img src="images/mexican.jpg"></button>
+                <h3>Mexican Cuisine</h3>
+            </div>
+        </div>
+        <div class="items" id="Indian">
+            <button class="item">Biryani</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+            <button class="item">Biryani</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+            <button class="item">Biryani</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="items" id="Italian">
+            <button class="item">Pizza</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+            </div>
+            <button class="item">Pizza</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+            <button class="item">Pizza</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="items" id="Korean">
+            <button class="item">Ramen</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+            <button class="item">Ramen</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+            <button class="item">Ramen</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="items" id="Mexican">
+            <button class="item">Taco</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+            <button class="item">Taco</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+            <button class="item">Taco</button>
+            <div class="detail">
+                <div class="info">
+                    <img src="images/food.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae laboriosam
+                        exercitationem, repellendus velit explicabo nulla fugit necessitatibus sint ab.</p>
+                    <div id="dishPrice">
+                        <span>Price</span>
+                        <span style=" font-size: xx-large; font-weight: bolder;">500/-</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="footer">
+        <div class="links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">FAQ'S</a>
+        </div>
+        <div class="address">
+            <span>@kalpaTeli</span>
+        </div>
+        <div class="contact">
+            <a href="#"><i class="material-icons custom-color">facebook</i></a>
+            <a href="#"><i class="material-icons custom-color">email</i></a>
+            <a href="#"><i class="material-icons custom-color">phone</i></a>
+        </div>
+
+    </div>
+
+    <script src="restScript.js"></script>
+
+</body>
+
+</html>

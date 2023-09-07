@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Log IN</title>
+    <link rel="stylesheet" href="siSu.css">
+    <script src="siScript.js"></script>
+
+    <style>
+        #wlcm {
+            font-size: 1cm;
+        }
+
+        #pass {
+            color: white;
+            margin-left: 150px;
+        }
+
+        .link {
+            color: white;
+            text-align: center;
+            font-size: large;
+            word-spacing: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h2>Hotel</h2>
+    </div>
+    <div class="signin">
+        <div class="container">
+            <form style="padding: 20% 0" onsubmit="return validate1()" action="home.html">
+                <h1 id="wlcm">Welcome back!! </h1><br><br>
+                <input type="text" class="in" id=username name=uname placeholder=" User-Name or Email-id "
+                    style="margin-top: 10px;">
+                <br><br>
+                <input type="password" class="in" id=password name=pass placeholder="Password"><br><br>
+                <input type="checkbox" style="margin-left:-180px;">Remember me <br>
+                <a id="pass" href="#">forgot password?</a>
+                <br>
+                <br>
+                <button id="SIbutton" type="submit" style=" font-size: 20px;" value="Sign-in"><strong>SIGN-IN</strong>
+                </button>
+                <br>
+                <br>
+                <a class="link" href="signUp.html">I AM NEW HERE !</a>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
